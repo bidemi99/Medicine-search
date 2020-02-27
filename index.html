@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Medicines</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">
+            Medicines
+        </h1>
+        <input type="text" id="medicineInput" placeholder="Search medicines...">
+        <ul id="medicines" class="collection with-header">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Acetaminophen</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Advil</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Amlodipine</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Amoxicillin</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Ativan</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Atorvastatin</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Azithromycin</a>
+            </li>
+
+
+
+            <li class="collection-header">
+                <h5>B</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Baclofen</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Benazepril</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Benzonatate</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Biotin</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bisoprolol</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Brimonidine</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Budesonide</a>
+            </li>
+
+
+
+
+            <li class="collection-header">
+                <h5>C</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Ciproflaxin</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cholecalciferol</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Celecoxib</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cetrizine</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cephalexin</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Clotrimazole</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Claritin</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cyanocobalamin</a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let medicineInput = document.getElementById('medicineInput');
+        medicineInput.addEventListener('keyup', filterMedicines);
+
+        function filterMedicines(){
+            let resultValue = document.getElementById('medicineInput').value.toUpperCase();
+            let list = document.getElementById('medicines');
+            let medicines = list.querySelectorAll('li.collection-item');
+
+            for(let i = 0;i < medicines.length;i++){
+                let a = medicines[i].getElementsByTagName('a')[0];
+                if(a.innerHTML.toUpperCase().indexOf(resultValue) > -1){
+                    medicines[i].style.display = '';
+                } else {
+                    medicines[i].style.display = 'none';
+                }
+            }
+        }
+    
+    </script>
+</body>
+</html>
